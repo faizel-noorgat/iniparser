@@ -19,7 +19,7 @@ jobs:
         echo "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" >> $GITHUB_PATH
 
     - name: Build project
-      run: mingw32-make
+      run: mingw32-make CC=gcc
 
     - name: Run unitary tests (optional)
       run: mingw32-make check
