@@ -30,8 +30,12 @@ jobs:
         mingw32-make example CC=gcc
         ./example/iniexample
 
-    - name: List directory contents
-      run: Get-ChildItem -Recurse
+    - name: Upload executable as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: testrun-executable
+        path: ./test/testrun.exe
+
 
 
 
