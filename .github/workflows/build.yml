@@ -34,4 +34,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: iniparser-executable
-        path: path_to_your_executable
+        path: ./iniparser # Replace with the actual path to your executable
+
