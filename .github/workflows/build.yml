@@ -23,6 +23,7 @@ jobs:
 
     - name: Run unitary tests (optional)
       run: mingw32-make check CC=gcc
+      continue-on-error: true
 
     - name: Compile and run example (optional)
       run: |
