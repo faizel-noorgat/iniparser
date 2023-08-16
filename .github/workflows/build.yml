@@ -22,9 +22,9 @@ jobs:
       run: mingw32-make CC=gcc
 
     - name: Run unitary tests (optional)
-      run: mingw32-make check
+      run: mingw32-make check CC=gcc
 
     - name: Compile and run example (optional)
       run: |
-        mingw32-make example
+        mingw32-make example CC=gcc
         ./example/iniexample
