@@ -10,17 +10,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install MinGW (or other compiler suite)
+    - name: Install MinGW
       run: |
         choco install mingw
 
+    - name: Add MinGW to PATH
+      run: |
+        echo "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" >> $GITHUB_PATH
+
     - name: Build project
-      run: make
+      run: mingw32-make
 
     - name: Run unitary tests (optional)
-      run: make check
+      run: mingw32-make check
 
     - name: Compile and run example (optional)
       run: |
-        make example
+        mingw32-make example
         ./example/iniexample
